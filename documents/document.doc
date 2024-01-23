@@ -12,19 +12,27 @@ Para executar app python:
 Bootstrap:
     Baixar Compiled CSS and JS 
     https://getbootstrap.com/docs/5.3/getting-started/download/
+    bootstrap:
+        1-navs and tabs - header
+        2-layout grid - main
+        3-list groups / flush
+        4-Pesos em textos:
+            fs (fontsize)
+            fw-lighter
+        5-Progress / labels
 
 Vídeo:
 aula-1
 https://www.youtube.com/watch?v=pzsBEuiZ2I4&list=PLR8JXremim5DU70e3x_rYhClgMTzTyv4m&index=1&t=508s
 
-    bootstrap:
-        1-navs and tabs - header
-        2-layout grid - main
+    
 aula-4
 https://www.youtube.com/watch?v=867gYNs6gug&list=PLR8JXremim5DU70e3x_rYhClgMTzTyv4m&index=4
 class="img-fluid shadow" 
     img-fluid=coloca as imagens do tamanho da coluna definida
     shadow=coloca uma sombra
+aula-8 
+https://www.youtube.com/watch?v=yM6NukGgXc4&list=PLR8JXremim5DU70e3x_rYhClgMTzTyv4m&index=8
 
 Salvar github a partir do vscode:
     Clicar a 2ªopção barra lateral do vscode - controle código fonte

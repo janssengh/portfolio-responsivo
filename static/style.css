@@ -191,3 +191,74 @@ i.menu-mobile {
 .section-bg {
     background-color: #eff5ff;
 }
+
+/* curriculo */
+.cv .cv-title {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18 ;
+}
+
+.cv .cv-item {
+    padding: 0 0 20px 20px; /* cima ; direita ; embaixo; esquerda */
+    margin-top: -2px; /* mais grudado ao tiulo */
+    border-left: 2px solid #1f5297; /* à esquerda */
+    position: relative;
+}
+
+.cv .cv-item h4 {
+    line-height: 18px; /* espaçamento de altura */
+    font-weight: 600; /* peso */
+    text-transform: uppercase; /* maiúsculas */
+    font-family: "Poppins", sans-serif;
+    color: #050d18;
+    margin-bottom: 10px;
+}
+
+.cv .cv-item h5 {
+    background: #e4edf9;
+    padding: 5px 15px; /* em cima e baixo ; direita e esquerda */
+    display: inline-block; /* fixo na linha */
+    font-weight: 600; /* peso */
+    margin-bottom: 10px;
+}
+
+/* marcador bolinha */
+.cv .cv-item::before {
+    content: "";
+    position: absolute; /* posicionado abosoluto por cima de qq coisa, acima da relatividade do (.cv .cv-item) */
+    top: 0; /* em cima do cv-item */
+    left: -9px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #1f5297;
+    background: #fff;
+    border-radius: 50%; /* arredonda */
+}
+
+/* portfolio */
+.carousel-control-prev {
+    margin-left: -50px;
+    /*margin-left: -8rem;*/
+}
+
+.carousel-control-next {
+    margin-right: -50px;
+    /*margin-right: -8rem;*/
+}
+
+.carousel-indicators {
+    margin-bottom: -35px;
+}
+
+@media (max-width: 1860px) {
+    .carousel-control-prev {
+        margin-left: 0;
+        /*margin-left: -8rem;*/
+    }
+    
+    .carousel-control-next {
+        margin-right: 0;
+        /*margin-right: -8rem;*/
+    }}
