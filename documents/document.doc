@@ -3,8 +3,9 @@ Instalar Extensões:
     Python
     vs code icons
 
-Insalar New Terminal:
+Insalar New Terminal (bash):
     pip install flask
+    pip install Flask-Mail
 
 Para executar app python:
     Run terminal usando python
@@ -41,4 +42,7 @@ Salvar github a partir do vscode:
         clicar ao lado do main , para salvar no github
 
 Estilizar barra lateral: pesquisa na google barra lateral scrollbars css:
-https://www.digitalocean.com/community/tutorials/css-scrollbars-pt
+    https://www.digitalocean.com/community/tutorials/css-scrollbars-pt
+
+Site para copiar os comandos do debpounce referente animação incluso no script.js:
+    https://davidwalsh.name/javascript-debounce-function
