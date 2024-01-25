@@ -2,24 +2,42 @@ from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
 from config import email, senha
 
+import smtplib
+import email.message
+
 app = Flask(__name__)
 app.secret_key = 'roeland'
+
+def enviar_email(corpo_email, assunto, destinatario, remetente):  
+    
+    corpo_email = corpo_email
+    msg = email.message.Message()
+    msg['Subject'] = assunto
+    msg['From'] = remetente
+    msg['To'] = destinatario
+    password = senha
+
+    msg.add_header('Content-Type', 'text/html')
+    msg.set_payload(corpo_email )
+
+    s = smtplib.SMTP('smtp.gmail.com: 587')
+    s.starttls()
+    # Login Credentials for sending the mail
+    s.login(msg['From'], password)
+    s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
+    print('Email enviado')
+
 mail_settings = {
-    "MAIL-SERVER": 'smtp.gmail.com',
-    "MAIL_PORT": 465,
-    "MAIL_USE_TLS": False,
-    "MAIL_USE_SSL": True,
     "MAIL_USERNAME": email,
     "MAIL_PASSWORD": senha
 }
 
 app.config.update(mail_settings)
-mail = Mail(app)
 
 class Contato:
     def __init__(self, nome, email, mensagem):
-        self.nome = nome,
-        self.email = email,
+        self.nome = nome
+        self.email = email
         self.mensagem = mensagem
 
 @app.route('/')
@@ -35,20 +53,19 @@ def send():
             request.form["mensagem"]
         )
 
-        msg = Message(
-            subject = f'{formContato.nome} te enviou uma mensagem no portfólio',
-            sender = app.config.get("MAIL_USERNAME"), 
-            recipients = ['roeland_hotmail.com', 'karinaijanssen@gmail.com', app.config.get("MAIL_USERNAME")],
-            body = f'''
+        corpo_email = f'''
+                        {formContato.nome} com o e-mail {formContato.email},
+                        te envou a seguinte mensagem:
 
-            {formContato.nome} te enviou uma mensagem no portfólio' com o e-mail {formContato.email}, te 
-            enviou a seguinte mensagem:
+                        {formContato.mensagem}
 
-            {formContato.mensagem}
-
-            '''
-        )
-        mail.send(msg)
+                        '''
+        assunto = f'{formContato.nome} te enviou uma mensagem no portfólio'
+        destinatario = 'roeland.e.janssen@gmail.com'
+        remetente = request.form["email"]
+        
+        enviar_email(corpo_email,assunto,destinatario,remetente)
+        
         flash('Mensagem enviada com sucesso!')
     return redirect('/')
 
