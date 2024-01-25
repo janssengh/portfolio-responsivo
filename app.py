@@ -1,6 +1,9 @@
 from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
-from config import email, senha
+from dotenv import load_dotenv
+import os
+load_dotenv()
+#from config import email, senha
 
 import smtplib
 import email.message
@@ -15,7 +18,7 @@ def enviar_email(corpo_email, assunto, destinatario, remetente):
     msg['Subject'] = assunto
     msg['From'] = remetente
     msg['To'] = destinatario
-    password = senha
+    password = os.getenv("SENHA")
 
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(corpo_email )
@@ -28,8 +31,8 @@ def enviar_email(corpo_email, assunto, destinatario, remetente):
     print('Email enviado')
 
 mail_settings = {
-    "MAIL_USERNAME": email,
-    "MAIL_PASSWORD": senha
+    "MAIL_USERNAME": os.getenv("EMAIL"),
+    "MAIL_PASSWORD": os.getenv("SENHA")
 }
 
 app.config.update(mail_settings)

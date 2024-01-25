@@ -10,6 +10,7 @@ Insalar New Terminal (bash):
     No final do projeto:
     pip install gunicorn
     pip freeze > requirements.txt
+    pip install python-dotenv
 
 Para executar app python:
     Run terminal usando python
