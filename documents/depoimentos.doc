@@ -1,0 +1,40 @@
+        <!-- depoimentos -->
+        <section  class="mt-5 cv" id="testmony-container">
+            <div class="container pb-5" data-anime="right">
+                <h2 class="pt-5">Veja o que os clientes dizem</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur id natus 
+                    rerum magnam assumenda possimus neque. Aut cupiditate ad ab! Asperiores 
+                    voluptatibus architecto perspiciatis, sint non beatae quo tempore commodi?
+                </p>
+                <div class="testmony-box">
+                    <p class="testmony-msg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                    <img src="/static/img/Sobre mim.png" alt="">
+                    <p class="testmony-name">Roeland</p>
+                </div>
+                <div class="testmony-box">
+                    <p class="testmony-msg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                    <img src="/static/img/Sobre mim.png" alt="">
+                    <p class="testmony-name">Roeland</p>
+                </div>
+                <div class="testmony-box">
+                    <p class="testmony-msg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                    <img src="/static/img/Sobre mim.png" alt="">
+                    <p class="testmony-name">Roeland</p>
+                </div>
+                <div class="testmony-box">
+                    <p class="testmony-msg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                    <img src="/static/img/Sobre mim.png" alt="">
+                    <p class="testmony-name">Roeland</p>
+                </div>
+            </div>
+        </section>
+        <!-- end depoimentos -->

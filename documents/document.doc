@@ -9,8 +9,12 @@ Insalar New Terminal (bash):
     
     No final do projeto:
     pip install gunicorn
-    pip freeze > requirements.txt
     pip install python-dotenv
+    pip freeze > requirements.txt
+    
+site heroku.com
+    e-mail: roeland.e.janssen@gmail.com
+        
 
 Para executar app python:
     Run terminal usando python
@@ -26,6 +30,24 @@ Bootstrap:
             fs (fontsize)
             fw-lighter
         5-Progress / labels
+        6-Carousel
+            Dark Variant 
+            Card 
+                Grid Cards 
+        7-Forms 
+            layout 
+                Gutters
+        8-Components 
+            spinners - mostra em processamento - ex.bottons
+        9-alerts 
+            dismissing
+        10-Icons 
+            Check
+            Mar 
+            Phon 
+            Menu / Bars 
+            Close / X
+
 
 Vídeo:
 aula-1
@@ -43,14 +65,39 @@ https://www.youtube.com/watch?v=yM6NukGgXc4&list=PLR8JXremim5DU70e3x_rYhClgMTzTy
 aula-11: 22:28
 https://www.youtube.com/watch?v=Exsd5pN61RI&list=PLR8JXremim5DU70e3x_rYhClgMTzTyv4m&index=11
 
-Salvar github a partir do vscode:
-    Clicar a 2ªopção barra lateral do vscode - controle código fonte
-    Inicializar repositórior 
-        colocar título ex. menu e inicio prontos, dar commit (salva no repositório local)
-        clicar ao lado do main , para salvar no github
+
 
 Estilizar barra lateral: pesquisa na google barra lateral scrollbars css:
     https://www.digitalocean.com/community/tutorials/css-scrollbars-pt
 
 Site para copiar os comandos do debpounce referente animação incluso no script.js:
     https://davidwalsh.name/javascript-debounce-function
+
+
+Observações:
+- Para funcionar local, colocar a senha que está no .env.exemple no .env
+- mt-5 = Margin Top - Alinha a expressão "Dados cartográficos..." embaixo do mapa
+- mt-md-0 = Margin Top, Medium (tela média) - N fica grudado emcima, para ajustar a alinhar a 2ªcoluna
+- data- = Serve criar, atributos diferenciados, utiliza replicar em outras partes e também colocar 
+    um nome ou valor estiver no CSS para referencia da forma mais simples.  
+    Ex.: data-anime = "down" de cima para baixo
+- CSS 
+    Transform Translate3d (0, -100px, 0) = x,y,z - tres itens - down
+- Lodash, biblioteca Javascript.
+- No Gmail, gerenciar contas 
+    Segurança:
+        gerar senha conforme novo app
+        Ativar imap
+- Documentação Flash Python - message flashing
+- Google Maps 
+    Colocar a rua
+        Compartilhar / Incorporar mapa / Pequeno, Medio ou Grande
+-Salvar github a partir do vscode:
+    Clicar a 2ªopção barra lateral do vscode - controle código fonte
+    Inicializar repositórior 
+        colocar título ex. menu e inicio prontos, dar commit (salva no repositório local)
+        clicar ao lado do main , para salvar no github 
+-Uso do site Render, para acessar o site externamente
+    No app salvo, foi declarado as variáveis do .env, conforme opção abaixo:
+        Environment
+

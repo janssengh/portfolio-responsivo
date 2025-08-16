@@ -1,9 +1,10 @@
 from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
-from dotenv import load_dotenv
+from dotenv import load_dotenv  
 import os
+
 load_dotenv()
-#from config import email, senha
+from config import email, senha
 
 import smtplib
 import email.message
@@ -30,12 +31,12 @@ def enviar_email(corpo_email, assunto, destinatario, remetente):
     s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
     print('Email enviado')
 
-mail_settings = {
-    "MAIL_USERNAME": os.getenv("EMAIL"),
-    "MAIL_PASSWORD": os.getenv("SENHA")
-}
+    mail_settings = {
+        "MAIL_USERNAME": os.getenv("EMAIL"),
+        "MAIL_PASSWORD": os.getenv("SENHA")
+    }
 
-app.config.update(mail_settings)
+    app.config.update(mail_settings)
 
 class Contato:
     def __init__(self, nome, email, mensagem):
@@ -55,7 +56,6 @@ def send():
             request.form["email"],
             request.form["mensagem"]
         )
-
         corpo_email = f'''
                         {formContato.nome} com o e-mail {formContato.email},
                         te envou a seguinte mensagem:
@@ -65,9 +65,9 @@ def send():
                         '''
         assunto = f'{formContato.nome} te enviou uma mensagem no portfólio'
         destinatario = 'roeland.e.janssen@gmail.com'
-        remetente = request.form["email"]
-        
-        enviar_email(corpo_email,assunto,destinatario,remetente)
+        remetente = formContato.email
+        enviar_email(corpo_email, assunto, destinatario, remetente)
+
         
         flash('Mensagem enviada com sucesso!')
     return redirect('/')

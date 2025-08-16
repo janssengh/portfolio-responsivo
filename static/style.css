@@ -41,7 +41,7 @@ html, body {
     background: #212431;
     color: #fff;
     padding: 0.6rem;
-    margin-right: 1rem;
+    margin-right: 0.6rem;
     border-radius: 50%;
     transition: 0.3s;
     text-decoration: none;
@@ -238,6 +238,34 @@ i.menu-mobile {
 }
 
 /* portfolio */
+
+#portfolio .card {
+    display: flex;
+    flex-direction: column;
+}
+
+#portfolio .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+#portfolio .card-body .mt-auto {
+    margin-top: auto; /* força os botões para baixo */
+}
+
+#portfolio .card-img-top {
+    height: 220px;          /* altura fixa */
+    object-fit: cover;      /* corta mantendo proporção */
+    object-position: center;/* centraliza o corte */
+}
+
+#portfolio .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 .carousel-control-prev {
     margin-left: -50px;
     /*margin-left: -8rem;*/
@@ -252,6 +280,112 @@ i.menu-mobile {
 .carousel-indicators {
     margin-bottom: -35px;
 }
+
+/* depoimentos */
+#depoimentos .card img {
+    margin: 15px auto; /* cima abaixo; esquerda direita */
+    display: block;
+    width: 120px;
+    /*border: 2px solid #2c2f3f;*/
+    border-radius: 50%;
+}
+
+
+
+#depoimentos .card .img {
+    margin: 15px auto; /* cima abaixo; esquerda direita */
+    display: block;
+    width: 120px;
+    border: 2px solid #2c2f3f;
+    border-radius: 50%;
+}
+
+#depoimentos .card .star-icon{
+    list-style-type: none;
+    border: 1px solid #fff;
+    cursor: pointer;
+    color:#ffe500;
+}
+
+
+#depoimentos .card .circulo {
+    margin: 15px auto;
+    position: relative;
+    width:70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(179, 60, 60);
+    border-radius: 50%;
+}
+
+#depoimentos .card .circulo p{
+    margin: 20px;
+    font-size: 50px;
+    color: #fff;
+}
+
+
+
+/*#testmony-container h2, #testmony-container p {
+    color: blue;
+    text-align: center;
+}
+
+#testmony-container h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+#testmony-container p {
+    margin-bottom: 50px;
+}*/
+
+.testmony-box {
+    display: inline-block;
+    width: 24.5%;
+    text-align: center;
+}
+
+#testmony-container .testmony-box .testmony-msg {
+    /*background-color: #e9abab;*/
+    background-color: #d3b8b8;
+    /*color: #666;*/
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    position: relative;
+    margin: 35px auto;
+    font-style: italic;
+}
+
+.testmony-msg::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #d3b8b8; /* triangulo */
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;  
+    margin-right: auto; /* deixa no meio */
+}
+
+.testmony-box img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.testmony-name {
+    font-weight: bold;
+}
+
 
 /* animação */
 [data-anime] {
@@ -294,6 +428,7 @@ i.menu-mobile {
     [data-anime="right"] {
         transform: translate3d(0, 100%, 0);
     }
+
 }
 
 /* botão enviando */
@@ -301,7 +436,7 @@ i.menu-mobile {
     display: none;
 }
 
-#alerta {
+#****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************a {******************************************************************************************************************************************************
     position: fixed;
     z-index: 10;
     top: 30px;

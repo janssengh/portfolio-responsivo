@@ -5,8 +5,8 @@ const body = document.querySelector('body');
 
 menuMobile.addEventListener('click', () => {
     menuMobile.classList.contains("bi-list")
-    ? menuMobile.classList.replace("bi-list", "bi-x")
-    : menuMobile.classList.replace("bi-x", "bi-list");
+    menuMobile.classList.replace("bi-list", "bi-x")
+    menuMobile.classList.replace("bi-x", "bi-list");
     body.classList.toggle("menu-nav-active");
 });
 
@@ -100,5 +100,35 @@ btnEnviar.addEventListener("click", () => {
 // tirar a mensagem depois de 5s
 
 setTimeout(() => {
-    document.querySelector('#alerta').style.display = 'none';
+    const alerta = document.querySelector('#alerta');
+    if (alerta) {
+        alerta.style.display = 'none';
+    }
 }, 5000)
+
+/* ===== Cálculo automático de idade ===== */
+function calcularIdade(birthISO) {
+    const hoje = new Date();
+    const [ano, mes, dia] = birthISO.split('-').map(Number);
+    let idade = hoje.getFullYear() - ano;
+    const aniversarioEsteAno = new Date(hoje.getFullYear(), mes - 1, dia);
+    if (hoje < aniversarioEsteAno) idade--;
+    return idade;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('idade');
+    if (!el) return;
+    const nascimento = el.dataset.birth || '1963-09-18';
+    el.textContent = `${calcularIdade(nascimento)} anos`;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const firstGithubLink = document.querySelector('#carouselPortfolio .carousel-item.active a[href*="github.com"]');
+    if (firstGithubLink) {
+        firstGithubLink.addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.open(this.href, '_blank');
+        });
+    }
+});
