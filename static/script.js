@@ -124,11 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const firstGithubLink = document.querySelector('#carouselPortfolio .carousel-item.active a[href*="github.com"]');
-    if (firstGithubLink) {
-        firstGithubLink.addEventListener('click', function(e) {
-            e.stopPropagation();
-            window.open(this.href, '_blank');
+    // Seleciona todos os links dentro da seção de portfólio
+    const portfolioLinks = document.querySelectorAll('#portfolio a');
+
+    // Para cada link, adiciona um ouvinte de evento de clique
+    portfolioLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Verifica se o link tem um href para evitar o conflito com botões sem link
+            if (this.href) {
+                // Impede que o evento de clique se propague para o carrossel
+                event.stopPropagation();
+            }
         });
-    }
+    });
 });
